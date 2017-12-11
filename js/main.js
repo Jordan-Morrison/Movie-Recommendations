@@ -130,7 +130,7 @@ function back(){
 document.getElementById("search-button").addEventListener("click", search);
 document.getElementById("search-input").addEventListener("keypress", function (pressed){
     var key = pressed.which || pressed.keyCode;
-    if (key === 13) {
+    if (key == 13 || key == 10) {
         search();
     }
 });
