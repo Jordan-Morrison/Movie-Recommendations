@@ -1,0 +1,193 @@
+/* Generic CSS */
+html, body, main{
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+/* Search Bar */
+.mid{
+    display: flex;
+    box-sizing: border-box;
+    width: 90%;
+    left: 5%;
+    position: fixed;
+    margin-top: 70%;
+    z-index: 2;
+    transition: margin-top 0.5s ease-in-out;
+}
+
+.resultsSearchBar{
+    margin-top: 5px;
+}
+
+.button{
+    height: 40px;
+    width: 40px;
+    padding: 3px;
+    background-color: #3b78e7;
+    color: white;
+    border: 1px solid #3367d6;
+    transition: box-shadow 0.2s ease;
+    outline: none;
+}
+
+.button:active{
+    box-shadow: inset 0 0 15px black;
+}
+
+#search-button{
+    border-radius: 0 2px 2px 0;
+}
+
+#back-button{
+    border-radius: 2px 0 0 2px;
+}
+
+input{
+    flex-grow: 6;
+    border: 1px solid #d9d9d9;
+    border-right: 0;
+    outline: none;
+    font-size: 12px;
+    padding: 0;
+    text-indent: 10px;
+}
+
+/* Home Page */
+.homePage{
+    transform: translateX(0);
+    height: 100%;
+    width: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.homePage.hide{
+    transform: translateX(-100%);
+}
+
+.logo{
+    width: 75%;
+    display: block;
+    margin: 0 auto;
+    padding-top: 40%;
+}
+
+.attribution{
+    width: 60%;
+    bottom: 10px;
+    position: fixed;
+    left: 20%;
+}
+
+/* Results Page */
+.page{
+    background-color: #f2f2f2;
+    width: 100%;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in-out;
+    position: absolute;
+    top: 0;
+    box-sizing: border-box;
+}
+
+.page.show{
+    transform: translateX(0);
+    min-height: 100%;
+}
+
+.searchDescription{
+    text-align: center;
+    margin-top: 60px;
+}
+
+.movie{
+    overflow: auto;
+    background-color: white;
+    width: 90%;
+    margin-bottom: 10px;
+    position: relative;
+    left: 5%;
+    border: 1px solid #d9d9d982;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.movie p:nth-child(n), .movie h2:nth-child(n), .movie h3:nth-child(n){
+    margin: 0;
+    padding: 5px;
+}
+
+.movie p{
+    line-height: 1.5;
+}
+
+.moviePoster{
+    float: left;
+    padding: 0 5px 10px 5px;
+    max-width: 35%;
+}
+
+.movie div{
+    display: flex;
+    align-items: center;
+}
+
+.rating{
+    color: gold;
+    letter-spacing: -5px;
+}
+
+/* Loading Screen */
+.loading{
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    position: fixed;
+    opacity: 0.7;
+    z-index: 100;
+    top: 0;
+}
+
+@-webkit-keyframes rotation {
+    from {transform: rotate(359deg);}
+    to   {transform: rotate(0deg);}
+}
+
+.rotate{
+    animation: rotation 1.2s infinite linear;
+    color: white;
+    font-size: 50vw;
+    margin-left: 25%;
+}
+
+.not{
+    display: none;
+}
+
+/* Media Queries */
+@media screen and (min-width: 800px){
+    .logo{
+        width: 40%;
+        padding-top: 10%;
+    }
+
+    .mid{
+        margin-top: 25%;
+        width: 40%;
+        left: 30%;
+    }
+
+    .resultsSearchBar {
+        margin-top: 5px;
+    }
+
+    .attribution{
+        width: 15%;
+        left: 42.5%;
+    }
+
+    .rotate{
+        margin-top: 0;
+    }
+}

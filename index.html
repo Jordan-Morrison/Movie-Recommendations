@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Movie Recommendations</title>
+    <meta name="viewport" content="width=device-width" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    <link rel="stylesheet" href="./css/main.css"/>
+</head>
+<body>
+    <main>
+        <header id="search-bar" class="mid">
+            <button id="back-button" class="material-icons button not">arrow_back</button>
+            <input type="text" id="search-input" autofocus/>
+            <button id="search-button" class="material-icons button">search</button>
+        </header>
+
+        <div id="homePage" class="homePage">
+            <img class="logo" src="./images/logo.png" alt="Google Movies"/>
+            <img class="attribution" src="./images/theMovieDB.svg" alt="The Movie DB"/>
+        </div>
+        
+        <div class="page" id="search-results">
+        </div>
+        
+        <div class="page not" id="recommend-results">
+            <section class="title"></section>
+            <section class="content"></section>
+        </div>
+    </main>
+    
+    <div id="loading" class="loading not">
+        <p class="material-icons rotate">sync</p>
+    </div>
+    
+    <div class="attribution">
+        
+    </div>
+    
+    <script src="./js/main.js"></script>
+</body>
+</html>
