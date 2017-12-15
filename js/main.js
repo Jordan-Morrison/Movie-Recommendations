@@ -5,23 +5,25 @@ let history = [];
 let currentResults = null;
 
 function search(){
-    document.getElementById("loading").classList.remove("not");
-    let keyWord = document.getElementById("search-input").value;
-    let url = ''.concat(BASEURL, "search/movie?api_key=", APIKEY, "&query=", keyWord);
-    fetch(url)
-    .then(result=>result.json())
-    .then((data)=>{
-        switchView();
-        data.results.searchTerm = document.getElementById("search-input").value;
-        data.results.isNewSearch = true;
-        currentResults = data.results;
-        history.push(data.results);
-        displayResults(data.results);
-    })
-    .catch(function(err){
-        document.getElementById("loading").classList.add("not"); 
-        alert(err);
-    });
+    if (document.getElementById("search-input").value != ""){
+        document.getElementById("loading").classList.remove("not");
+        let keyWord = document.getElementById("search-input").value;
+        let url = ''.concat(BASEURL, "search/movie?api_key=", APIKEY, "&query=", keyWord);
+        fetch(url)
+        .then(result=>result.json())
+        .then((data)=>{
+            switchView();
+            data.results.searchTerm = document.getElementById("search-input").value;
+            data.results.isNewSearch = true;
+            currentResults = data.results;
+            history.push(data.results);
+            displayResults(data.results);
+        })
+        .catch(function(err){
+            document.getElementById("loading").classList.add("not"); 
+            alert(err);
+        });
+    }
 }
 
 function related(movieID, movieTitle){
